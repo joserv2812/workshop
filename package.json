@@ -17,19 +17,22 @@
   "devDependencies": {
     "angular-mocks": "1.5.0",
     "angular-ui-bootstrap": "1.2.5",
-    "karma-coverage": "0.5.5",
+    "gulp-protractor": "2.3.0",
     "jasmine-core": "2.4.1",
     "karma": "0.13.22",
+    "karma-coverage": "0.5.5",
     "karma-jasmine": "0.3.7",
+    "karma-ng-html2js-preprocessor": "0.2.0",
     "karma-phantomjs-launcher": "1.0.0",
     "lite-server": "2.1.0",
     "phantomjs-prebuilt": "2.1.5",
+    "protractor": "3.0.0",
     "sinon": "1.17.3"
   },
   "dependencies": {
     "angular": "1.5.0",
     "angular-ui-router": "0.2.18",
-    "angularfire": "1.1.4"
+    "angularfire": "1.1.4",
+    "gulp": "3.9.1"
   }
 }
-

@@ -21,12 +21,14 @@ module.exports = function(config) {
       'app/**/*.controller.js',
       'app/**/*.routes.js',
       'app/**/*.service.js',
+      'app/**/*.directive.js',
       'app/**/*.filter.js',
-      'app/**/*.test.js'
+      'app/**/*.spec.js'
     ],
 
     preprocessors: {
-      'app/**/!(*test).js': ['coverage']
+      'app/**/!(*test).js': ['coverage'],
+      '**/*.html': ['ng-html2js']
     },
 
     coverageReporter: {
