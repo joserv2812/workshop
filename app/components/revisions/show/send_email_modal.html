@@ -1,0 +1,25 @@
+<div class="modal-header">
+  <h3 class="modal-title">Enviar Correo</h3>
+</div>
+<form name="sendEmailForm">
+  <div class="modal-body">
+    <div class="container-fluid">
+      <div class="row form-row">
+        <div class="col-sm-12">
+          <label>Correo:</label>
+          <input type="email" ng-model="vm.email" name="email" required/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer text-center">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-12">
+          <button class="btn btn-primary" ng-disabled="sendEmailForm.$invalid" ng-click="vm.sendRevision(vm.revision, vm.email)">Enviar</button>
+          <button class="btn btn-secondary" ng-click="vm.cancel()"> Cancelar </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

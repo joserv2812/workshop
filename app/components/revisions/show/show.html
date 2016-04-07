@@ -1,0 +1,168 @@
+<sidebar></sidebar>
+<div class="content-wrapper">
+  <uib-alert ng-repeat="alert in vm.alerts" type="{{alert.type}}" close="vm.closeAlert($index)">{{alert.msg}}</uib-alert>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1> Revision del veh&iacute;culo</h1>
+      </div>
+    </div>
+    <div class="show-info-container">
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label>Veh&iacute;culo:</label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+          <span>{{ vm.revision.vehicle_ref }}</span>
+        </div>
+      </div>
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label>Usuario:</label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+          <span>{{ vm.revision.user }}</span>
+        </div>
+      </div>
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label>Número de contrato:</label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+          <span>{{ vm.revision.contract_number }}</span>
+        </div>
+      </div>
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label>Lugar de entrega:</label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+          <span>{{ vm.revision.delivery_place }}</span>
+        </div>
+      </div>
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label>Gas:</label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+          <span>{{ vm.revision.gas_level }}</span>
+        </div>
+      </div>
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label>Tipo:</label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+          <span>{{ vm.revision.type }}</span>
+        </div>
+      </div>
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label>Fecha:</label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+          <span>{{ vm.revision.timestamp | date:'yyyy-MM-dd HH:mm:ss' }}</span>
+        </div>
+      </div>
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label>Daños:</label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+          <div ng-repeat="damage in vm.damages">
+            <label>Tipo de daño: </label> <span>{{ damage.damage_type }}</span><br/>
+            <label>Parte del carro: </label> <span>{{ damage.part }}</span><br />
+          </div>
+          <span ng-hide="vm.damages">Sin Da&ntilde;os</span>
+        </div>
+      </div>
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label>Partes del veh&iacute;culo:</label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+          <div>
+            <label>Antena: </label>
+            <span ng-if="vm.revision.car_parts_present.antenna" class="glyphicon glyphicon-ok"> </span>
+            <span ng-if="vm.revision.car_parts_present.antenna == false" class="glyphicon glyphicon-remove"> </span>
+          </div>
+          <div>
+            <label>Alfombras: </label>
+            <span ng-if="vm.revision.car_parts_present.carpet" class="glyphicon glyphicon-ok"> </span>
+            <span ng-if="vm.revision.car_parts_present.carpet == false" class="glyphicon glyphicon-remove"> </span>
+          </div>
+          <div>
+            <label>Emblemas: </label>
+            <span ng-if="vm.revision.car_parts_present.emblems" class="glyphicon glyphicon-ok"> </span>
+            <span ng-if="vm.revision.car_parts_present.emblems == false" class="glyphicon glyphicon-remove"> </span>
+          </div>
+          <div>
+            <label>Kit de Emergencia: </label>
+            <span ng-if="vm.revision.car_parts_present.emergency_kit" class="glyphicon glyphicon-ok"> </span>
+            <span ng-if="vm.revision.car_parts_present.emergency_kit == false" class="glyphicon glyphicon-remove"> </span>
+          </div>
+          <div>
+            <label>Documentos legales: </label>
+            <span ng-if="vm.revision.car_parts_present.legal_documents" class="glyphicon glyphicon-ok"> </span>
+            <span ng-if="vm.revision.car_parts_present.legal_documents == false" class="glyphicon glyphicon-remove"> </span>
+          </div>
+          <div>
+            <label>Placas: </label>
+            <span ng-if="vm.revision.car_parts_present.plates" class="glyphicon glyphicon-ok"> </span>
+            <span ng-if="vm.revision.car_parts_present.plates == false" class="glyphicon glyphicon-remove"> </span>
+          </div>
+          <div>
+            <label>Rack: </label>
+            <span ng-if="vm.revision.car_parts_present.rack" class="glyphicon glyphicon-ok"> </span>
+            <span ng-if="vm.revision.car_parts_present.rack == false" class="glyphicon glyphicon-remove"> </span>
+          </div>
+          <div>
+            <label>Herramientas </label>
+            <span ng-if="vm.revision.car_parts_present.tools" class="glyphicon glyphicon-ok"> </span>
+            <span ng-if="vm.revision.car_parts_present.tools == false" class="glyphicon glyphicon-remove"> </span>
+          </div>
+        </div>
+      </div>
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label>Llanta frontal izquierda:</label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+          <span>{{ vm.revision.tires.left_front }}</span>
+        </div>
+      </div>
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label>Llanta frontal derecha:</label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+            <span>{{ vm.revision.tires.right_front }}</span>
+        </div>
+      </div>
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label>Llanta trasera izquierda:</label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+          <span>{{ vm.revision.tires.left_rear }}</span>
+        </div>
+      </div>
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label>Llanta trasera derecha:</label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+          <span>{{ vm.revision.tires.right_rear }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <button class="btn btn-primary btn-long" ng-click="vm.editRevision(vm.currentRevisionId)">Editar</button>
+        <button class="btn btn-secondary btn-long" ui-sref="revisions"> Volver </button>
+        <button class="btn btn-secondary btn-long" ng-click="vm.openEmailModal()"> Enviar Correo </button>
+      </div>
+    </div>
+  </div>
+</div>

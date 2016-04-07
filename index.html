@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Budget</title>
+    <base href="/" />
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/application.css" />
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/sidebar.css" />
+  </head>
+  <body ng-app="app">
+    <header id="app-header">
+      <a href="/">
+        <img id="app-logo" src="assets/img/logo.png" alt="logo" />
+      </a>
+      <button class="btn top-right-corner" ng-show="isLoggedIn()" ng-click="logOut()">Salir</button>
+    </header>
+    <div ui-view>
+    </div>
+
+    <!-- Angular -->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <!-- UI Router -->
+    <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <!-- Angular Bootstrap -->
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+    <script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+    <!-- Firebase & AngularFire -->
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="node_modules/angularfire/dist/angularfire.min.js"></script>
+    <!-- Budget App -->
+    <script src="app/app.module.js"></script>
+    <script src="app/app.config.js"></script>
+    <script src="app/app.routes.js"></script>
+    <script src="app/core/core.module.js"></script>
+    <script src="app/core/core.constants.js"></script>
+    <!-- Revisions Module -->
+    <script src="app/components/revisions/revisions.module.js"></script>
+    <script src="app/components/revisions/revisions.controller.js"></script>
+    <script src="app/components/revisions/revisions.routes.js"></script>
+    <script src="app/components/revisions/revisions.service.js"></script>
+    <script src="app/components/revisions/revisions.constants.js"></script>
+    <script src="app/components/revisions/revisions_email.service.js"></script>
+    <script src="app/components/revisions/show/show.controller.js"></script>
+    <script src="app/components/revisions/show/send_email_modal.controller.js"></script>
+    <script src="app/components/revisions/edit/edit.controller.js"></script>
+    <!-- Vehicles Module -->
+    <script src="app/components/vehicles/vehicles.module.js"></script>
+    <script src="app/components/vehicles/vehicles.controller.js"></script>
+    <script src="app/components/vehicles/vehicles.routes.js"></script>
+    <script src="app/components/vehicles/vehicles.service.js"></script>
+    <script src="app/components/vehicles/string-to-number.directive.js"></script>
+    <script src="app/components/vehicles/show/show.controller.js"></script>
+    <script src="app/components/vehicles/edit/edit.controller.js"></script>
+    <script src="app/components/vehicles/new/new.controller.js"></script>
+    <!-- Users Module -->
+    <script src="app/components/users/users.module.js"></script>
+    <script src="app/components/users/users.routes.js"></script>
+    <script src="app/components/users/users.controller.js"></script>
+    <script src="app/components/users/users.service.js"></script>
+    <script src="app/components/users/show/show.controller.js"></script>
+    <script src="app/components/users/edit/edit.controller.js"></script>
+    <script src="app/components/users/new/new.controller.js"></script>
+    <!-- Login Module -->
+    <script src="app/components/login/login.module.js"></script>
+    <script src="app/components/login/login.controller.js"></script>
+    <script src="app/components/login/login.routes.js"></script>
+    <script src="app/components/login/login.service.js"></script>
+    <!-- Shared filters, directives and services -->
+    <script src="app/shared/filterObjDict.filter.js"></script>
+    <script src="app/shared/session.service.js"></script>
+    <!-- Layout -->
+    <script src="app/layout/layout.module.js"></script>
+    <script src="app/layout/sidebar/sidebar.directive.js"></script>
+
+  </body>
+</html>

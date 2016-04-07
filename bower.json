@@ -1,0 +1,19 @@
+{
+  "name": "budget-web",
+  "description": "Web interface for Budget.",
+  "main": "index.html",
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "firebase": "2.4.1",
+    "bootstrap": "3.3.6"
+  }
+}

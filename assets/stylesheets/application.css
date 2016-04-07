@@ -1,0 +1,137 @@
+body {
+  background: white;
+  color: #032A5D;
+  padding-bottom: 3em;
+}
+
+#app-header {
+  background: #032A5D;
+  height: 5em;
+}
+
+#app-logo {
+  max-height: 98%;
+  padding: 1%;
+}
+
+.btn {
+  text-shadow: none;
+  box-shadow: none;
+}
+
+.btn-long {
+  min-width: 10em;
+  margin: 0 0.5em;
+}
+
+.btn-primary {
+  background: #F1592A;
+  border: none;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background: #F34B17;
+  border: none;
+}
+
+.btn-secondary {
+  color: white;
+  background: #1A2F59;
+}
+
+.btn-secondary:hover, .btn-secondary:focus, .btn-secondary:active {
+  color: white;
+  background: #1C2159;
+}
+
+.list-container {
+  padding: 1em;
+}
+
+.list-element {
+  padding: 0.6em 0.4em 1em 0.4em;
+  border-bottom: 0.1em solid lightgrey;
+}
+
+.list-element:hover {
+  background: #F5F5F5;
+  padding: 1em 0.4em 1.4em 0.4em;
+}
+
+.show-info-container {
+  margin: 2em 0 3em 0;
+}
+
+.info-detail {
+  margin-bottom: 0.8em;
+  padding-bottom: 0.2em;
+  border-bottom: 0.1em solid #F5F5F5;
+}
+
+.form-row {
+  padding: 0.4em 0;
+  margin: 0.2em 0;
+}
+
+input {
+  padding: 0.2em 0.6em;
+  color: grey;
+  border: none;
+  border-bottom: 1px solid lightgray;
+}
+
+input:hover {
+  color: #1C2159;
+  border-bottom: 1px solid #1A2F59;
+}
+
+input:focus {
+  color: #F34B17;
+  border-bottom: 2px solid #F1592A;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+tr:hover td {
+  cursor: pointer;
+  background: #F5F5F5;
+}
+
+.modal-footer.text-center {
+  text-align: center;
+}
+
+input:invalid{
+ color: #ff0000;
+ border-bottom: 2px solid #ff0000;
+}
+
+.msg-error{
+ font-size: 10px;
+ color: #ff0000;
+}
+
+.absolute-center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.absolute-center.is-responsive {
+  width: 50%;
+  height: 25%;
+  min-width: 450px;
+  max-width: 450px;
+  padding: 40px;
+}
+
+.top-right-corner {
+  float: right;
+  margin: 25px 30px 0 0;
+}
+

@@ -1,0 +1,27 @@
+<sidebar></sidebar>
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1> {{ vm.user.username }} </h1>
+      </div>
+    </div>
+    <div class="show-info-container">
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label> Nombre de Usuario: </label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+          <span> {{ vm.user.username }} </span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <button class="btn btn-primary btn-long" ui-sref="userEdit({id: vm.user.$id })"> Editar </button>
+        <button class="btn btn-secondary btn-long" ui-sref="users"> Volver </button>
+      </div>
+    </div>
+  </div>
+</div>
+

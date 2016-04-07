@@ -1,0 +1,126 @@
+<sidebar></sidebar>
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1> Editar revision</h1>
+      </div>
+    </div>
+    <form name="editRevisionForm">
+      <div class="show-info-container">
+        <div class="row form-row">
+          <div class="col-md-2 col-sm-3 label-container">
+            <label>Veh&iacute;culo:</label>
+          </div>
+          <div class="col-md-10 col-sm-9">
+            <input type="number" name="vehicle" ng-model="vm.revision.vehicle_ref" required />
+          </div>
+          <div class="col-md-10 col-sm-9 col-md-offset-2 col-sm-offset-3" ng-if="editRevisionForm.vehicle.$error.required">
+            <span class="msg-error">Campo Requerido</span>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-2 col-sm-3 label-container">
+            <label>Usuario:</label>
+          </div>
+          <div class="col-md-10 col-sm-9">
+            <input type='text' name="user" ng-model='vm.revision.user' required/>
+          </div>
+          <div class="col-md-10 col-sm-9 col-md-offset-2 col-sm-offset-3" ng-if="editRevisionForm.user.$error.required">
+            <span class="msg-error">Campo Requerido</span>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-2 col-sm-3 label-container">
+            <label>N&uacute;mero de contrato:</label>
+          </div>
+          <div class="col-md-10 col-sm-9">
+            <input type="number" name="contractNumber" ng-model='vm.revision.contract_number' required/>
+          </div>
+          <div class="col-md-10 col-sm-9 col-md-offset-2 col-sm-offset-3" ng-if="editRevisionForm.contractNumber.$error.required">
+            <span class="msg-error">Campo Requerido</span>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-2 col-sm-3 label-container">
+            <label>Tipo:</label>
+          </div>
+          <div class="col-md-10 col-sm-9">
+            <select ng-options="option.name as option.name for option in vm.revisionType" ng-model="vm.revision.type" >
+            </select>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-2 col-sm-3 label-container">
+            <label>Lugar de entrega:</label>
+          </div>
+          <div class="col-md-10 col-sm-9">
+            <input type="text" name="place" ng-model="vm.revision.delivery_place" required />
+          </div>
+          <div class="col-md-10 col-sm-9 col-md-offset-2 col-sm-offset-3" ng-if="editRevisionForm.place.$error.required">
+            <span class="msg-error">Campo Requerido</span>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-2 col-sm-3 label-container">
+            <label>Gas:</label>
+          </div>
+          <div class="col-md-10 col-sm-9">
+            <select ng-options="option.name as option.name for option in vm.gasState" ng-model="vm.revision.gas_level" >
+            </select>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-2 col-sm-3 label-container">
+            <label>Fecha:</label>
+          </div>
+          <div class="col-md-10 col-sm-9">
+            <span>{{ vm.revision.timestamp | date:'yyyy-MM-dd HH:mm:ss' }}</span>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-2 col-sm-3 label-container">
+            <label>Llanta frontal izquierda:</label>
+          </div>
+          <div class="col-md-10 col-sm-9">
+            <select ng-options="option.name as option.name for option in vm.tireBrands" ng-model="vm.revision.tires.left_front" >
+            </select>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-2 col-sm-3 label-container">
+            <label>Llanta frontal derecha:</label>
+          </div>
+          <div class="col-md-10 col-sm-9">
+            <select ng-options="option.name as option.name for option in vm.tireBrands" ng-model="vm.revision.tires.right_front" >
+            </select>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-2 col-sm-3 label-container">
+            <label>Llanta trasera izquierda:</label>
+          </div>
+          <div class="col-md-10 col-sm-9">
+            <select ng-options="option.name as option.name for option in vm.tireBrands" ng-model="vm.revision.tires.left_rear" >
+            </select>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-2 col-sm-3 label-container">
+            <label>Llanta trasera derecha:</label>
+          </div>
+          <div class="col-md-10 col-sm-9">
+            <select ng-options="option.name as option.name for option in vm.tireBrands" ng-model="vm.revision.tires.right_rear" >
+            </select>
+          </div>
+        </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <button ng-disabled="editRevisionForm.$invalid" class="btn btn-primary btn-long" ng-click="vm.saveRevision()"> Guardar </button>
+          <button class="btn btn-secondary btn-long" ui-sref="revision({ id: vm.revision.$id })"> Volver </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

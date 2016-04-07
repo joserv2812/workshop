@@ -1,0 +1,22 @@
+<sidebar></sidebar>
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <h1>Vehículos</h1>
+        <button class="btn btn-primary" ui-sref="vehicleNew"> Nuevo Vehículo </button><br /><br />
+        <div class="input-group">
+          <input type="text" ng-model="vm.query" placeholder="Buscar veh&iacute;culo" class="form-control" />
+        </div>
+      </div>
+    </div>
+    <div class="col-12 list-container">
+      <div class="col-12 list-element" ng-repeat="vehicle in vm.vehicles | filterObjDict: vm.query:['MVA']" ng-click="vm.showVehicle(vehicle.MVA)">
+        <h4> {{ vehicle.MVA }} {{ vehicle.brand }} {{ vehicle.model }} {{ vehicle.license_plate }} </h4>
+        <label> Color: </label> <span> {{ vehicle.color }} </span>
+        <label> PSC: </label> <span> {{ vehicle.PSC }} </span>
+      </div>
+    </div>
+  </div>
+</div>
+

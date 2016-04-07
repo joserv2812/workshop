@@ -1,0 +1,8 @@
+node_modules
+bower_components
+.idea/
+coverage
+.DS_Store
+*.swp
+*.log
+*~

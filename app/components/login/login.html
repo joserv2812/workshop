@@ -1,0 +1,18 @@
+<div class="alert alert-danger" ng-show="vm.isIncorrectLogin">
+  <button ng-click="vm.closeAlert()" class="close" type="button" aria-label="Close">&times;</button>
+  <strong>Nombre de usuario o contrase&ntilde;a incorrecta</strong>
+</div>
+<form class="container absolute-center is-responsive">
+  <div class="form-row row">
+    <label class="text-right col-xs-4" for="username">Usuario:</label>
+    <input class="col-xs-6" id="username" type="text" ng-model="vm.username" />
+  </div>
+  <div class="form-row row">
+    <label class="text-right col-xs-4" for="password">Contrase&ntilde;a:</label>
+    <input class="col-xs-6" id="password" type="password" ng-model="vm.password" />
+  </div>
+  <br />
+  <div class="form-row row">
+    <button class="btn btn-primary col-xs-offset-4 col-xs-6" ng-click="vm.logIn(vm.username, vm.password)" type="submit">Ingresar</button>
+  </div>
+</form>

@@ -1,0 +1,34 @@
+.sidebar {
+  display: inline-block;
+  width: 20%;
+  float: left;
+  background: #F58B24;
+}
+
+.navbar {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.navbar-element {
+  padding: 1.2em 1em;
+  border-bottom: 1px solid #F5F5F5;
+  cursor: pointer;
+  color: white;
+}
+
+.navbar-element:hover {
+  background: #F1592A;
+}
+
+.navbar-element.active {
+  background: #F34B17;
+}
+
+.content-wrapper {
+  display: inline-block;
+  width: 80%;
+  padding: 0 1em;
+}

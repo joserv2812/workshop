@@ -1,0 +1,89 @@
+<sidebar></sidebar>
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1>Editar {{ vm.vehicle.MVA }} {{ vm.vehicle.brand }} {{vm.vehicle.model }}</h1>
+      </div>
+    </div>
+    <form name="editVehicleForm">
+      <div class="show-info-container">
+        <div class="row form-row">
+          <div class="col-md-2 col-sm-3 label-container">
+            <label>PSC:</label>
+          </div>
+          <div class="col-md-10 col-sm-9">
+            <input name="vehiclePSC" ng-model="vm.vehicle.PSC" required/>
+          </div>
+          <div class="col-md-10 col-sm-9 col-md-offset-2 col-sm-offset-3" ng-if="editVehicleForm.vehiclePSC.$error.required">
+            <span class="msg-error">Campo Requerido</span>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-2 col-sm-3 label-container">
+            <label>Color:</label>
+          </div>
+          <div class="col-md-10 col-sm-9">
+            <input name="vehicleColor" ng-model="vm.vehicle.color" required/>
+          </div>
+          <div class="col-md-10 col-sm-9 col-md-offset-2 col-sm-offset-3" ng-if="editVehicleForm.vehicleColor.$error.required">
+            <span class="msg-error">Campo Requerido</span>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-2 col-sm-3 label-container">
+            <label>Tipo de gasolina:</label>
+          </div>
+          <div class="col-md-10 col-sm-9">
+            <select name="vehicleGas" ng-model="vm.vehicle.gas" required>
+              <option value="gasolina">Gasolina</option>
+              <option value="diesel">Diesel</option>>
+            </select>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-2 col-sm-3 label-container">
+            <label>Tracción:</label>
+          </div>
+          <div class="col-md-10 col-sm-9">
+            <select name="vehicleTractionType" ng-model="vm.vehicle.traction_type" required>
+              <option value="4x2">4x2</option>
+              <option value="4x4">4x4</option>
+            </select>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-2 col-sm-3 label-container">
+            <label>Número de placa:</label>
+          </div>
+          <div class="col-md-10 col-sm-9">
+            <input type="text" name="vehicleLicensePlate" ng-model="vm.vehicle.license_plate" required/>
+          </div>
+          <div class="col-md-10 col-sm-9 col-md-offset-2 col-sm-offset-3" ng-if="editVehicleForm.vehicleLicensePlate.$error.required">
+            <span class="msg-error">Campo Requerido</span>
+          </div>
+        </div>
+        <div class="row form-row">
+          <div class="col-md-2 col-sm-3 label-container">
+            <label>Año:</label>
+          </div>
+          <div class="col-md-10 col-sm-9">
+            <input type="number" name="vehicleYear" min="1900" max="2200" string-to-number ng-model="vm.vehicle.year" required/>
+          </div>
+          <div class="col-md-10 col-sm-9 col-md-offset-2 col-sm-offset-3" ng-if="(editVehicleForm.vehicleYear.$invalid) && !editVehicleForm.vehicleYear.$error.required">
+            <span class="msg-error">Introducir Año En El Rango De 1900 a 2200</span>
+          </div>
+          <div class="col-md-10 col-sm-9 col-md-offset-2 col-sm-offset-3" ng-if="editVehicleForm.vehicleYear.$error.required">
+            <span class="msg-error">Campo Requerido</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <button ng-disabled="editVehicleForm.$invalid" class="btn btn-primary btn-long" ng-click="vm.persistData(vm.vehicle)"> Guardar </button>
+          <button class="btn btn-secondary btn-long" ui-sref="vehicle({ id: vm.vehicle.$id })"> Volver </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

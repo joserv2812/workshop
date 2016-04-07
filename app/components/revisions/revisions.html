@@ -1,0 +1,33 @@
+<sidebar></sidebar>
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6">
+        <h1>Revisiones</h1><br />
+        <div class="input-group">
+          <input type="text" ng-model="vm.filterString" placeholder="Buscar revision" class="form-control" /><br /> <br />
+        </div>
+
+        <table class="table table-responsive">
+          <tr>
+            <th>Veh&iacute;culo</th>
+            <th>Usuario</th>
+            <th># de Contrato</th>
+            <th>Tipo</th>
+            <th>Lugar de Entrega</th>
+            <th>Fecha</th>
+          </tr>
+          <tr ng-repeat="revision in vm.revisions | filter: vm.filterString | orderBy: '-timestamp'" ng-click="vm.showRevision(revision.$id)">
+            <td>{{ revision.vehicle_ref }}</td>
+            <td>{{ revision.user }}</td>
+            <td>{{ revision.contract_number }}</td>
+            <td>{{ revision.type }}</td>
+            <td>{{ revision.delivery_place }}</td>
+            <td>{{ revision.timestamp | date:'dd-MM-yyyy' }}</td>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</div>

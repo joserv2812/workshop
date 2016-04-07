@@ -1,0 +1,58 @@
+<sidebar></sidebar>
+<div class="content-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1> {{ vm.vehicle.MVA }} {{ vm.vehicle.brand }} {{ vm.vehicle.model }} {{ vm.vehicle.license_plate }} </h1>
+      </div>
+    </div>
+    <div class="show-info-container">
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label> PSC: </label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+          <span> {{ vm.vehicle.PSC }}
+        </div>
+      </div>
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label> Color: </label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+          <span> {{ vm.vehicle.color }}
+        </div>
+      </div>
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label> Tipo de gasolina: </label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+          <span> {{ vm.vehicle.gas }}
+        </div>
+      </div>
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label> Tipo de tracción: </label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+          <span> {{ vm.vehicle.traction_type }}
+        </div>
+      </div>
+      <div class="row info-detail">
+        <div class="col-lg-2 col-md-4 col-sm-5">
+          <label> Año: </label>
+        </div>
+        <div class="col-lg-10 col-md-8 col-sm-7">
+          <span> {{ vm.vehicle.year }}
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <button class="btn btn-primary btn-long" ui-sref="vehicleEdit({id: vm.vehicle.$id })"> Editar </button>
+        <button class="btn btn-secondary btn-long" ui-sref="vehicles"> Volver </button>
+      </div>
+    </div>
+  </div>
+</div>
